@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            .shark-hide {
+                display: none;
+            }
+            .shark-menu-content {
+                height: 100px;
+                border: 1px solid red;
+            }
+            .shark-item {
+                filter: grayscale(100%);
+            }
+            .shark-item.shark-highlight {
+                filter: initial;
+            }
+            .shark-item.shark-highlight img {
+                width: 150px;
+                height: 150px;
+            }
+            img {
+                transition: width 1s, height 1s;
+            }
+            .shark-item img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .shark-slide {
+                position: relative;
+                width: 800px;
+            }
+            .shark-slide-image {
+                display: none;
+            }
+            .shark-active {
+                display: inline-block;
+            }
+            .shark-slide-button {
+                width: 30px;
+                height: 50px;
+                color: #fff;
+                background: black;
+                opacity: 0.3;
+                outline: 0;
+                border: 0;
+                cursor: pointer
+            }
+            .shark-left {
+                left: 0;
+            }
+            .shark-right {
+                right: 0;
+            }
+            /*用来垂直居中一个元素的套路 css*/
+            .shark-vertical-center {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .shark-slide-dots {
+                /*水平居中的套路*/
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .shark-slide-dot {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: red;
+                cursor: pointer;
+            }
+            .shark-white {
+                background: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="shark-3">
+            <div class="shark-slide" data-imgs="3" data-active="0">
+                <img id="id-sharkimage-0" class="shark-slide-image shark-active" src="slideimages/1.jpg" alt="">
+                <img id="id-sharkimage-1" class="shark-slide-image" src="slideimages/2.jpg" alt="">
+                <img id="id-sharkimage-2" class="shark-slide-image" src="slideimages/3.jpg" alt="">
+                <button class="shark-slide-button shark-left shark-vertical-center"
+                    data-offset="-1">&lt;</button>
+                <button class="shark-slide-button shark-right shark-vertical-center"
+                    data-offset="1">&gt;</button>
+                <div class="shark-slide-dots">
+                    <div id="id-dot-0" class="shark-slide-dot shark-white"
+                         data-index="0"></div>
+                    <div id="id-dot-1" class="shark-slide-dot"
+                         data-index="1"></div>
+                    <div id="id-dot-2" class="shark-slide-dot"
+                         data-index="2"></div>
+                </div>
+            </div>
+        </div>
+        <script src="shark.js"></script>
+        <script src="3.js"></script>
+    </body>
+</html>
